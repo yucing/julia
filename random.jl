@@ -1,0 +1,5 @@
+println("兩個玩家猜拳")
+num=rand(1:3)
+num2=rand(1:3)
+print(num," ")
+println(num2)
