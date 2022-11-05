@@ -1,4 +1,4 @@
-print("反向輸出")
+println("反向輸出")
 n = parse(Int, readline())
 a = 1
 temp = 0
