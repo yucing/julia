@@ -5,6 +5,5 @@ for _ in range(1,stop=20)
 end
 println(a)
 unique!(a)
-println(a)
 sort!(a)
 println(a)
