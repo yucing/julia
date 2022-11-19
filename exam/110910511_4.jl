@@ -1,18 +1,16 @@
 using DelimitedFiles
-A=[  6  1  1  9  9  8  2  6  5  4;
-3  6  3  3  3  1  6  2  2  3;
-4  5  4  5  9  8  2  9  1  9;
-2  2  2  8  9  5  0  7  7  9;
-7  6  6  2  6  7  3  7  2  6]
-
-B = [ 2  9  1  3  6  2  6  6  9  5;
-2  6  6  8  3  7  1  6  8  1;
-7  6  1  3  1  7  4  1  5  0;
-4  3  9  8  5  3  6  9  9  3;
-1  8  6  5  5  8  9  7  3  7]
-
-C=[A;B]
-C[C[:,1].>5, C[1,:].>5]
-f = open("matrix.csv","w")
+A = readdlm("dataA.txt"); A
+AA = reshape(A,5,10)
+B = readdlm("dataB.txt"); B
+BB = reshape(B,5,10)
+C=[AA;BB]
+for i in range(1, stop=10)
+    for j in range(1, stop=10)
+        if C[i,j] < 0
+            C[i,j] *= -1
+        end
+    end
+end
+f = open("110910511_4.csv","w")
 writedlm(f,C[C[:,1].>5, C[1,:].>5],",")
 close(f)
